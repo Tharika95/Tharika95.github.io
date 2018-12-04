@@ -86,7 +86,7 @@
                     <h2 class="section-heading">Overview</h2>
                     <hr class="light">
                     <p class="text-faded">
-                        The Amazon Fine Food reviews dataset provides us with reviews given by the customers and the score related to them. The main aim here is to predict the rating based on this information. As the restaurants which get positive reviews are most likely to be visited by people,we want to build a recommendation system by using different algorithms and testing which algorithm gives the best rating for the restaurants. Amazon Fine Food Review data set consists of about 568,454 food reviews Amazon users left upto October 2012.
+                      The Amazon Fine Food reviews dataset provides us with reviews given by the customers and the score related to them. The main aim here is to predict the rating based on this information. As the restaurants which get positive reviews are most likely to be visited by people,we want to build a recommendation system by using different algorithms and testing which algorithm gives the best rating for the restaurants. Amazon Fine Food Review data set consists of about 568,454 food reviews Amazon users left upto October 2012.
                     </p>
                 </div>
             </div>
@@ -109,7 +109,9 @@
                         The tasks involved are-<br/>- Pre-processing the data which includes removal of stop words, stemming, lemming, removal of all non-alphanumeric characters<br/>
                         - Implementation of KNN and Naive Bayes algorithms from scratch in pyspark<br/>
                         - Determining the accuracy of the algorithms for the data set<br/>- Implementation and Comparison of the accuracy with scikit-learn libraries for KNN and Naive Bayes<br/>
-                        - Taking review from user in console, and predicting the rating based on the model built</p>
+                        </p>
+
+
                     </div>
                 </div>
               </div>
@@ -122,10 +124,11 @@
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Data set</h2>
                     <hr class="light">
-                    <p class="text-faded">We are using <a href="https://www.kaggle.com/snap/amazon-fine-food-reviews">  Amazon Fine Food Review data set</a> provided by Amazon on Kaggle. The data set consists of 568,454 food reviews Amazon users left up to October 2012.
-                    The data set is included in a single CSV file, Reviews.csv with attributes : Id, ProductId, UserId, ProfileName, HelpfulnessNumerator, HelpfulnessDenominator, Score, Time, Summary, Text.
-                    The algorithms implemented in the project use Score and Text attributes which represent Rating and Review respectively.
-                    The size of the data set is 293MB.
+                    <p class="text-faded">
+                    We are using Amazon fine food review data set from Kaggle. The data set consists of user reviews in the form of rating, written review, user details on fine food from Amazon. The data set is large and consist of many useful attributes based on which we will train our model to predict the rating given the various values of the attributes.<br/>
+Dataset link:<b> <a href="https://www.kaggle.com/snap/amazon-fine-food-reviews">Amazon Food Reviews</a> </b><br/>
+Dataset Size: 251 MB
+
                     </p>
                    <!--  <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Implementation</a> -->
                 </div>
@@ -152,8 +155,7 @@
                         It is an intuitive method that uses probabilities of each attribute belonging to each class to make a prediction. <br/>
                         The multinomial Naive Bayes with smoothing has been implemented. To classify, we calculated probabilities of the review belonging to each rating and then selected the class value with highest probability.
                         We have performed computations by summing logs of probabilities rather than multiplying probabilities for underflow prevention. <br/>
-                        Formula : <br/>
-                        <img src="img/NBFormula.png"></p>
+                        </p>
                 </div>
                 <div class="col-lg-12">
                     <h3>K-Nearest Neighbors Algorithm</h3>
@@ -161,6 +163,13 @@
                         Hamming distance and Levenshtien distance has been used to classify reviews.
                        </p>
                 </div>
+                <div class="col-lg-12">
+
+                <h3>Logistic Regression Algorithm</h3>
+                <p class="text-muted">
+Logistic regression is a predictive analysis used to describe data and to explain the relationship between one dependent binary variable and one or more nominal, ordinal, interval or ratio-level independent variables.
+</p><br/>
+        </div>
             </div>
         </div>
     </section>
@@ -186,12 +195,7 @@
                     - Comparison of accuracy of implemented algorithms with scikit-learn libraries
                     </p>
                     </div>
-                    <div class="col-lg-12">
-                    <h3>Additional deliverable</h3>
-                    <p class="text-faded text-left">
-					The additional deliverable includes taking the review from user in console, and predicting the rating based on the model built.
-                    </p>
-                 </div>
+
             </div>
         </div>
     </section>
@@ -279,7 +283,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Additional Comments</h2>
+                    <h2 class="section-heading">References</h2>
                     <hr class="light">
                  </div>
              </div>
@@ -288,10 +292,11 @@
          	<div class="row">
                     <div class="col-lg-12">
                    <p class="text-faded text-hleft">
-                   - The project was run on Azure HDInsight with configuration of 2 Head nodes with 8 cores and 6 Worker nodes with 24 cores.<br/>
-                   - For KNN, the edit distance algorithm to calculate the distance took lot of time for execution but with better accuracy. <br/>
-                   - The Naive Bayes was implemented with smoothing. <br/>
-                   - Different alpha value was tried for Naive Bayes algorithm
+                     https://www.kaggle.com/snap/amazon-fine-food-reviews<br/>
+https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html<br/>
+https://scikit-learn.org/stable/modules/svm.html<br/>
+https://scikit-learn.org/stable/modules/naive_bayes.html<br/>
+https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html<br/>
                     </p>
                     </div>
             </div>
@@ -311,17 +316,25 @@
         </div>
         <div class="container">
             <div class="row">
-                   <p>Nikita Nalawade <br/>
-					# Implemented the K-nearest neighbor algorithm<br/>
-					# Taking user review from console and predicting the rating based on the model built using KNN and Naive Bayes<br/><br/>
-                    Priyanka Sawant<br/>
-                    # Retrieving, Cleaning and preprocessing the data. For example, removing the stop word, non-alphanumeric characters, Stemming and lemming<br/>
-					# Implementation of Naive-Bayes algorithm with scikit-learn libraries and comparison of the accuracy<br/><br/>
-                    Siddhant Gokule<br/>
-                    # Implemented the prediction model using Naive Bayes algorithm<br/><br/>
-                    Tharika Ganesh<br/>
-                    # Implementation of KNN algorithm with scikit-learn libraries and comparison of the accuracy<br/>
-					# Calculating the accuracy of the fitted data</p>
+                   <p><b>Nikita Nalawade</b> <br/>
+                     -Dividing the dataset into training and validation dataset<br/>
+-Build and train the model to predict the rating using K-nearest neighbours algorithm on Spark<br/><br/>
+
+				 <b> Priyanka Sawant</b><br/>
+          -Perform Data Cleaning and preprocessing like data normalization, stemming and lemmatization <br/>
+-Build model using Naive- Bayes and compare it with KNN model<br/><br/>
+
+                        <b>Tharika Ganesh</b><br/>
+
+                        -Build model using SVM libraries and compare with K-nearest neighbours<br/>
+-Performing cross validation on the sample data set to measure the accuracy of the model<br/><br/>
+
+
+                    <b>Siddhant Gokule</b><br/>
+                    -Build model using logistic regression<br/>
+                    -Comparative analysis of all the models and suggest best suited model for chosen dataset<br/><br/>
+
+                    </p>
             </div>
         </div>
     </section>
@@ -330,6 +343,7 @@
      <aside class="bg-dark">
         <div class="container text-center">
             <div class="call-to-action">
+
             </div>
         </div>
     </aside>
